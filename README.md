@@ -1,6 +1,20 @@
 # NoteKeeperWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.  
+Inspired by the notes of [Google Keep](https://keep.google.com/u/0/#home).
+
+## Features 
+- Add new note
+- Edit note
+- Delete note
+- List all notes
+- File notes
+- List all filed notes
+- Add new category
+- Edit category
+- Delete category
+- List all categories 
+- Filter note by category
 
 ## Development server
 
@@ -13,10 +27,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
