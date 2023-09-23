@@ -1,1 +1,95 @@
-<p>add-note works!</p>
+<section class="row justify-content-center">
+    <div class="col-lg-4 d-grid gap-4">
+        <h1>Add new Note</h1>
+
+        <h2 class="fs-4 fw-light">
+            Add a new custom note to improve your daily task management!
+        </h2>
+
+        <form (submit)="addNote()" class="d-grid gap-3">
+            <div class="mb-3">
+                <label for="title" class="form-label fs-5 fw-semibold">Title</label>
+                <input [(ngModel)]="note.title" type="text" class="form-control" id="title" name="title" />
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label fs-5 fw-semibold">Content</label>
+                <textarea
+                    [(ngModel)]="note.content"
+                    name="content"
+                    class="form-control"
+                    id="content"
+                    rows="3"
+                ></textarea>
+            </div>
+
+            <label for="theme" class="form-label fs-5 fw-semibold">Theme</label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="theme"
+                        id="themeDark"
+                        value="dark"
+                    />
+                    <label class="form-check-label" for="themeDark">Standard</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="theme"
+                        id="themeInfo"
+                        value="info"
+                    />
+                    <label class="form-check-label" for="themeInfo">Information</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="theme"
+                        id="themeWarning"
+                        value="warning"
+                    />
+                    <label class="form-check-label" for="themeWarning">Warning</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="theme"
+                        id="themeDanger"
+                        value="danger"
+                    />
+                    <label class="form-check-label" for="themeDanger">Urgent</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 border-{{ note.theme }}">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <h5 class="card-title">{{ note.title }}</h5>
+                            <span class="ms-auto fw-semibold text-muted">{{ note.id }}</span>
+                        </div>
+                        <p class="card-text my-4">{{ note.content }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 my-2 justify-content-end">
+                <button type="submit" class="btn btn-primary px-5">Save</button>
+                <button routerLink="/notes/list" class="btn btn-outline-danger px-4">Cancel</button>
+            </div>
+        </form>
+    </div>
+</section>

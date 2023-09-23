@@ -1,1 +1,29 @@
-<p>card-note works!</p>
+<div class="card h-100 border-{{ note.theme }}">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="card-title">{{ note.title }}</h5>
+            <span class="ms-auto fw-semibold text-muted">Id: {{ note.id }}</span>
+        </div>
+        <p class="card-text my-4">{{ note.content }}</p>
+    </div>
+
+    <div class="d-flex gap-1 justify-content-end card-footer bg-transparent">
+        <button
+            class="btn btn-outline-{{ note.theme }}"
+            aria-label="Editar"
+            ngbTooltip="Editar"
+            placement="bottom"
+        >
+            <i class="bi bi-pen"></i>
+        </button>
+
+        <button
+            class="btn btn-outline-{{ note.theme }}"
+            aria-label="Excluir"
+            ngbTooltip="Excluir"
+            placement="bottom"
+        >
+            <i class="bi bi-trash"></i>
+        </button>
+    </div>
+</div>

@@ -3,12 +3,12 @@
         <h1>My Notes</h1>
 
         <div class="d-flex gap-2">
-            <button routerLink="/notas/criar" class="btn btn-lg btn-outline-primary mb-4 rounded-4">
+            <button routerLink="../add" class="btn btn-lg btn-outline-primary mb-4 rounded-4">
                 <i class="bi bi-plus-circle"></i>
                 New Note
             </button>
 
-            <button routerLink="/notas/listar/arquivadas" class="btn btn-lg btn-outline-secondary mb-4 rounded-4">
+            <button routerLink="/notes/filed" class="btn btn-lg btn-outline-secondary mb-4 rounded-4">
                 <i class="bi bi-archive-fill"></i>
                 Filed Notes
             </button>
@@ -17,8 +17,8 @@
         <!-- <app-filtros-por-categoria [categorias]="categorias" (onFiltroSelecionado)="filtrarNotasPorCategoria($event)"></app-filtros-por-categoria> -->
 
         <div class="row g-3">
-            <div  class="col-sm col-md-6 col-lg-3"> <!-- *ngFor="let note of notes" -->
-                <!-- <app-nota [nota]="nota" (onArquivarClicado)="arquivarNota($event)" ></app-nota> -->
+            <div *ngFor="let note of notes" class="col-sm col-md-6 col-lg-3"> <!-- (onArquivarClicado)="arquivarNota($event)"  -->
+                <app-card-note [note]="note"></app-card-note>
             </div>
         </div>
     </div>
