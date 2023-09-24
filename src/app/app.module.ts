@@ -18,6 +18,7 @@ import { EditCategoryComponent } from './components/categories/edit-category/edi
 import { DeleteCategoryComponent } from './components/categories/delete-category/delete-category.component';
 import { ListCategoriesComponent } from './components/categories/list-categories/list-categories.component';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     NgbModule,
     ToastrModule.forRoot({
       timeOut: 4000,

@@ -1,60 +1,42 @@
 import { Injectable } from "@angular/core";
 import { Note } from "../models/note";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root' // app module
 })
 export class noteService{
-    notes: Note[] = [
-        {
-            id: 0,
-            title: 'Lavar o cachorro ',
-            content: 'Pegar a toalha > Pegar o Shampoo',
-            theme: 'dark',
-            categoryId: 1,
-            filed: false
-        },
-        {
-            id: 1,
-            title: 'Fazer tarefa',
-            content: 'Pegar a folha > Pegar o lápis',
-            theme: 'danger',
-            categoryId: 1,
-            filed: false
-        },
-        {
-            id: 2,
-            title: 'Estender a roupa',
-            content: 'Pegar as roupas > levar no quintal',
-            theme: 'warning',
-            categoryId: 1,
-            filed: false
-        }
-    ];
 
-    Add(note: Note) {
-        note.id = this.notes.length;
-        this.notes.push(note);
-        return;
+    private API_URL = 'http://localhost:3000/notes';
+
+    constructor(
+        private http: HttpClient
+    ){}
+
+    Add(note: Note): Observable<Note>{
+        return this.http.post<Note>(this.API_URL, note)
     }
 
-    Edit(note: Note){
-        const noteIndex = this.notes.findIndex((n) => n.id == note.id);
-        this.notes[noteIndex] = note;
-        return;
+    Edit(note: Note): Observable<Note>{
+        const url = `${this.API_URL}/${note.id}`;
+
+        return this.http.put<Note>(url, note);
     }
 
-    Delete(note: Note) {
-        const noteIndex = this.notes.findIndex((n) => n.id == note.id);
-        this.notes.splice(noteIndex, 1); // (start point, delete count)
-        return;
+    Delete(note: Note): Observable<any> {
+        const url = `${this.API_URL}/${note.id}`;
+
+        return this.http.delete<Note>(url);
     }
 
-    GetNoteById(id: number): Note | undefined {
-        return this.notes.find((note) => note.id == id);
+    GetNoteById(id: number): Observable<Note>{
+        const url = `${this.API_URL}/${id}`;
+
+        return this.http.get<Note>(url);
     }
 
-    GetAll(): Note[]{
-        return this.notes;
+    GetAll(): Observable<Note[]>{
+        return this.http.get<Note[]>(this.API_URL);
     }
 }

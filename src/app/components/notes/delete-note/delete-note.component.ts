@@ -24,12 +24,15 @@ export class DeleteNoteComponent implements OnInit {
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!); // the exclamation mark is equal 'as string'
 
-    this.note = this.noteService.GetNoteById(id)!;
+    this.noteService.GetNoteById(id).subscribe((note: Note) => {
+      this.note = note;
+    });
   }
 
   DeleteNote(){
-    this.noteService.Delete(this.note);
-    this.toastService.success('Note deleted!', 'Success');
-    this.router.navigate(['/notes', 'list']);
+    this.noteService.Delete(this.note).subscribe(() => {
+      this.toastService.success(`Note deleted!`, 'Success');
+      this.router.navigate(['/notes', 'list']);
+    });
   }
 }

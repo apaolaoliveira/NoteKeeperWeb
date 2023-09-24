@@ -24,12 +24,15 @@ export class EditNoteComponent implements OnInit{
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!); // the exclamation mark is equal 'as string'
 
-    this.note = this.noteService.GetNoteById(id)!;
+    this.noteService.GetNoteById(id).subscribe((note: Note) => {
+      this.note = note;
+    });
   }
 
   EditNote(){
-    this.noteService.Edit(this.note);
-    this.toastService.success('Note edited!', 'Success');
-    this.router.navigate(['/notes', 'list']);
+    this.noteService.Edit(this.note).subscribe((note: Note) => {
+      this.toastService.success(`Note ${note.title} edited!`, 'Success');
+      this.router.navigate(['/notes', 'list']); 
+    });
   }
 }

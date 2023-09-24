@@ -21,8 +21,11 @@ export class AddNoteComponent {
   }
 
   AddNote(){
-    this.noteService.Add(this.note);
-    this.toastService.success('New note added!', 'Success');
-    this.router.navigate(['/notes', 'list']); 
+    this.noteService.Add(this.note).subscribe((note) => {
+
+
+      this.toastService.success(`Note ${note.title} added!`, 'Success');
+      this.router.navigate(['/notes', 'list']); 
+    });
   }
 }
