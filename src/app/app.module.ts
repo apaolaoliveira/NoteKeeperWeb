@@ -17,6 +17,7 @@ import { AddCategoryComponent } from './components/categories/add-category/add-c
 import { EditCategoryComponent } from './components/categories/edit-category/edit-category.component';
 import { DeleteCategoryComponent } from './components/categories/delete-category/delete-category.component';
 import { ListCategoriesComponent } from './components/categories/list-categories/list-categories.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,12 @@ import { ListCategoriesComponent } from './components/categories/list-categories
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    })    
   ],
   providers: [],
   bootstrap: [AppComponent]

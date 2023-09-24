@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Note } from 'src/app/models/note';
 import { noteService } from 'src/app/services/note.service';
 
@@ -14,7 +15,8 @@ export class DeleteNoteComponent implements OnInit {
   constructor(
     private noteService: noteService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastService: ToastrService
   ){
     this.note = new Note ('', '', 'dark', 1, 0);
   }
@@ -27,6 +29,7 @@ export class DeleteNoteComponent implements OnInit {
 
   DeleteNote(){
     this.noteService.Delete(this.note);
+    this.toastService.success('Note deleted!', 'Success');
     this.router.navigate(['/notes', 'list']);
   }
 }
