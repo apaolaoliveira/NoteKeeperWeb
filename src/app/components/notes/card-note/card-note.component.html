@@ -9,18 +9,20 @@
 
     <div class="d-flex gap-1 justify-content-end card-footer bg-transparent">
         <button
+            routerLink="/notes/edit/{{ note.id }}"
             class="btn btn-outline-{{ note.theme }}"
-            aria-label="Editar"
-            ngbTooltip="Editar"
+            aria-label="Edit"
+            ngbTooltip="Edit"
             placement="bottom"
         >
             <i class="bi bi-pen"></i>
         </button>
 
         <button
+            routerLink="/notes/delete/{{ note.id }}"
             class="btn btn-outline-{{ note.theme }}"
-            aria-label="Excluir"
-            ngbTooltip="Excluir"
+            aria-label="Delete"
+            ngbTooltip="Delete"
             placement="bottom"
         >
             <i class="bi bi-trash"></i>

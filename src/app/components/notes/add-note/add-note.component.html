@@ -6,7 +6,7 @@
             Add a new custom note to improve your daily task management!
         </h2>
 
-        <form (submit)="addNote()" class="d-grid gap-3">
+        <form (submit)="AddNote()" class="d-grid gap-3">
             <div class="mb-3">
                 <label for="title" class="form-label fs-5 fw-semibold">Title</label>
                 <input [(ngModel)]="note.title" type="text" class="form-control" id="title" name="title" />
@@ -87,7 +87,7 @@
             </div>
 
             <div class="d-flex gap-2 my-2 justify-content-end">
-                <button type="submit" class="btn btn-primary px-5">Save</button>
+                <button type="submit" class="btn btn-outline-primary px-5">Save</button>
                 <button routerLink="/notes/list" class="btn btn-outline-danger px-4">Cancel</button>
             </div>
         </form>

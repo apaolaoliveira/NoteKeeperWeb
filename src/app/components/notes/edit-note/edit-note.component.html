@@ -1,1 +1,104 @@
-<p>edit-note works!</p>
+<section class="row justify-content-center">
+    <div class="col-lg-4 d-grid gap-4">
+        <h1>Edit Note</h1>
+    
+        <h2 class="fs-4 fw-light">
+            You can easily edit all information of your notes!
+        </h2>
+
+        <form (submit)="EditNote()" class="d-grid gap-3">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Title</label>
+                <input
+                    [(ngModel)]="note.title"
+                    type="text"
+                    class="form-control"
+                    id="titulo"
+                    name="titulo"
+                />
+            </div>
+
+            <div class="mb-3">
+                <label for="conteudo" class="form-label">Content</label>
+                <textarea
+                    [(ngModel)]="note.content"
+                    name="conteudo"
+                    class="form-control"
+                    id="conteudo"
+                    rows="3"
+                ></textarea>
+            </div>
+
+            <label for="tema" class="form-label fs-5 fw-semibold">Theme</label>
+
+            <div>
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="tema"
+                        id="temaDark"
+                        value="dark"
+                    />
+                    <label class="form-check-label" for="temaDark">Standard</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="tema"
+                        id="temaInfo"
+                        value="info"
+                    />
+                    <label class="form-check-label" for="temaInfo">Information</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="tema"
+                        id="temaWarning"
+                        value="warning"
+                    />
+                    <label class="form-check-label" for="temaWarning">Warning</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input
+                        [(ngModel)]="note.theme"
+                        class="form-check-input"
+                        type="radio"
+                        name="tema"
+                        id="temaDanger"
+                        value="danger"
+                    />
+                    <label class="form-check-label" for="temaDanger">Urgent</label>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-{{ note.theme }}">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <h5 class="card-title">{{ note.title }}</h5>
+                            <span class="ms-auto fw-semibold text-muted">Id: {{ note.id }}</span>
+                        </div>
+                        <p class="card-text my-4">{{ note.content }}</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="d-flex gap-2 my-2 justify-content-end">
+                <button type="submit" class="btn btn-outline-primary px-5">Save</button>
+                <button routerLink="/notes/list" class="btn btn-outline-danger px-4">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

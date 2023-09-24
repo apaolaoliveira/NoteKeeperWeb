@@ -15,16 +15,10 @@ export class AddNoteComponent {
     private noteService: noteService,
     private router: Router
   ) {
-    this.note = new Note (
-      'Estudar astronomia 🪐',
-      'Pegar os materiais -> abrir o youtube',
-      'dark',
-      1,
-      0
-    )
+    this.note = new Note ('', '', 'dark', 1, 0);
   }
 
-  addNote(){
+  AddNote(){
     this.noteService.Add(this.note);
     this.router.navigate(['/notes', 'list'])
   }

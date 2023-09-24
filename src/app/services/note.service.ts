@@ -5,7 +5,6 @@ import { Note } from "../models/note";
     providedIn: 'root' // app module
 })
 export class noteService{
-    
     notes: Note[] = [
         {
             id: 0,
@@ -36,6 +35,23 @@ export class noteService{
     Add(note: Note) {
         note.id = this.notes.length;
         this.notes.push(note);
+        return;
+    }
+
+    Edit(note: Note){
+        const noteIndex = this.notes.findIndex((n) => n.id == note.id);
+        this.notes[noteIndex] = note;
+        return;
+    }
+
+    Delete(note: Note) {
+        const noteIndex = this.notes.findIndex((n) => n.id == note.id);
+        this.notes.splice(noteIndex, 1); // (start point, delete count)
+        return;
+    }
+
+    GetNoteById(id: number): Note | undefined {
+        return this.notes.find((note) => note.id == id);
     }
 
     GetAll(): Note[]{
