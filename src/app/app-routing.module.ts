@@ -4,6 +4,10 @@ import { ListNotesComponent } from './components/notes/list-notes/list-notes.com
 import { AddNoteComponent } from './components/notes/add-note/add-note.component';
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
 import { DeleteNoteComponent } from './components/notes/delete-note/delete-note.component';
+import { DeleteCategoryComponent } from './components/categories/delete-category/delete-category.component';
+import { EditCategoryComponent } from './components/categories/edit-category/edit-category.component';
+import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
+import { ListCategoriesComponent } from './components/categories/list-categories/list-categories.component';
 
 const routes: Routes = [
   {
@@ -26,7 +30,23 @@ const routes: Routes = [
   {
     path: 'notes/delete/:id',
     component: DeleteNoteComponent
-  }
+  },
+  {
+    path: 'categories/list',
+    component: ListCategoriesComponent
+  },
+  {
+    path: 'categories/add',
+    component: AddCategoryComponent
+  },
+  {
+    path: 'categories/edit/:id',
+    component: EditCategoryComponent
+  },
+  {
+    path: 'categories/delete/:id',
+    component: DeleteCategoryComponent
+  },
 ];
 
 @NgModule({

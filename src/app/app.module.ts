@@ -24,17 +24,21 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     NavbarComponent,
+
+    // notes
     ListNotesComponent,
     CardNoteComponent,
     AddNoteComponent,
     EditNoteComponent,
     DeleteNoteComponent,
-    CategoryFilterComponent,
     ListFiledNotesComponent,
+
+    // categories
+    ListCategoriesComponent,
     AddCategoryComponent,
     EditCategoryComponent,
     DeleteCategoryComponent,
-    ListCategoriesComponent
+    CategoryFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     NgbModule,
     ToastrModule.forRoot({
-      timeOut: 4000,
+      timeOut: 5000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
     })    

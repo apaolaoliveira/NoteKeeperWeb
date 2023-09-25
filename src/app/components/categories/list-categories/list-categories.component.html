@@ -1,1 +1,53 @@
-<p>list-categories works!</p>
+<section class="row justify-content-center">
+    <div class="col-lg-4 d-grid gap-4">
+        <h1>My categories</h1>
+
+        <div class="mb-3">
+            <button routerLink="/categories/add" class="btn btn-lg btn-outline-primary mb-4 rounded-4">
+                <i class="bi bi-plus-circle"></i>
+                Add new category
+            </button>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Title</th>
+                    <th class="text-end" scope="col">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <th scope="row">{{ category.id }}</th>
+
+                    <td>
+                        {{ category.title }}
+                    </td>
+
+                    <td>
+                        <div class="d-flex gap-1 justify-content-end">
+                            <button
+                                routerLink="/categories/edit/{{ category.id }}"
+                                ngbTooltip="Edit"
+                                class="btn btn-outline-primary rounded-5 py-2"
+                            >
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button
+                                routerLink="/categories/delete/{{ category.id }}"
+                                ngbTooltip="Delete"
+                                class="btn btn-outline-danger rounded-5 py-2"
+                            >
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>  

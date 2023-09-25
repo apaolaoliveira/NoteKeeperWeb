@@ -1,1 +1,20 @@
-<p>category-filter works!</p>
+<div class="row g-2">
+    <div class="col-6 col-lg-1">
+        <span
+            (click)="GetAllCategories()"
+            ngbTooltip="Todas as notas"
+            placement="left"
+            class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold"
+        >Todas</span>
+    </div>
+
+    <div class="col-6 col-lg-1" *ngFor="let category of categories">
+        <span
+            (click)="SelectByFilter(category)"
+            ngbTooltip="Filtrar por category: {{ category.title }}"
+            placement="bottom"
+            class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold"
+            >{{ category.title.split(" ")[0] }}</span>
+    </div>
+</div>
+

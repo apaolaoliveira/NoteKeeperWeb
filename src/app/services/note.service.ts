@@ -15,7 +15,7 @@ export class noteService{
     ){}
 
     Add(note: Note): Observable<Note>{
-        return this.http.post<Note>(this.API_URL, note)
+        return this.http.post<Note>(this.API_URL, note);
     }
 
     Edit(note: Note): Observable<Note>{

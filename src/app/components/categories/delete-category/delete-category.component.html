@@ -1,1 +1,28 @@
-<p>delete-category works!</p>
+<section class="row justify-content-center">
+    <div class="col-lg-4 d-grid gap-4">
+        <h1>Delete Category</h1>
+
+        <h2 class="fs-4 fw-light">
+            Are you sure about deleting this category?
+        </h2>
+
+        <form (submit)="DeleteCategory()" class="d-grid gap-3">
+            <div class="card border-dark">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <h3 class="card-title">{{ category.title }}</h3>
+                        <span class="ms-auto text-muted fw-semibold">Id: {{ category.id }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 my-2 justify-content-end">
+                <button type="submit" class="btn btn-outline-danger px-5">Confirm</button>
+                <button type="button" routerLink="/categories/list" class="btn btn-primary px-4">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+

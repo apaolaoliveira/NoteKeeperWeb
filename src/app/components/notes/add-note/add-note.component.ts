@@ -6,8 +6,7 @@ import { noteService } from 'src/app/services/note.service';
 
 @Component({
   selector: 'app-add-note',
-  templateUrl: './add-note.component.html',
-  styleUrls: ['./add-note.component.css']
+  templateUrl: './add-note.component.html'
 })
 export class AddNoteComponent {
   note: Note 
@@ -22,9 +21,7 @@ export class AddNoteComponent {
 
   AddNote(){
     this.noteService.Add(this.note).subscribe((note) => {
-
-
-      this.toastService.success(`Note ${note.title} added!`, 'Success');
+      this.toastService.success(`Note '${note.title}' added!`, 'Success');
       this.router.navigate(['/notes', 'list']); 
     });
   }

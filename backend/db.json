@@ -1,34 +1,42 @@
 {
-    "notes": [
-        {
-            "id": 0,
-            "title": "Lavar o cachorro",
-            "content": "Pegar a toalha > Pegar o Shampoo",
-            "theme": "dark",
-            "categoryId": 1,
-            "filed": false
-        },
-        {
-            "id": 1,
-            "title": "Fazer tarefa",
-            "content": "Pegar a folha > Pegar o lápis",
-            "theme": "danger",
-            "categoryId": 1,
-            "filed": false
-        },
-        {
-            "id": 2,
-            "title": "Estender a roupa",
-            "content": "Pegar as roupas > levar no quintal",
-            "theme": "warning",
-            "categoryId": 1,
-            "filed": false
-        },
-        {
-            "title": "Nota editada",
-            "content": "testando2",
-            "theme": "warning",
-            "id": 4
-        }
-    ]
+  "categories": [
+    {
+      "title": "Leisure",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Health"
+    },
+    {
+      "id": 3,
+      "title": "Work"
+    }
+  ],
+  "notes": [
+    {
+      "id": 0,
+      "title": "Lavar o irmão do cachorro",
+      "content": "Pegar a toalha > Pegar o Shampoo",
+      "theme": "info",
+      "categoryId": 1,
+      "filed": false
+    },
+    {
+      "id": 1,
+      "title": "Fazer tarefa",
+      "content": "Pegar a folha > Pegar o lápis",
+      "theme": "danger",
+      "categoryId": 1,
+      "filed": false
+    },
+    {
+      "id": 2,
+      "title": "Estender a roupa",
+      "content": "Pegar as roupas > levar no quintal",
+      "theme": "warning",
+      "categoryId": 1,
+      "filed": false
+    }
+  ]
 }

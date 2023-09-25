@@ -15,6 +15,8 @@ Inspired by the notes of [Google Keep](https://keep.google.com/u/0/#home).
 - Delete category
 - List all categories 
 - Filter note by category
+- Persistence of information in json-server
+- Management of request made in Insomnia, posted Api: [NoteKeeperApi]()
 
 ## Development server
 

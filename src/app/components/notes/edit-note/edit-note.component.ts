@@ -6,11 +6,10 @@ import { noteService } from 'src/app/services/note.service';
 
 @Component({
   selector: 'app-edit-note',
-  templateUrl: './edit-note.component.html',
-  styleUrls: ['./edit-note.component.css']
+  templateUrl: './edit-note.component.html'
 })
 export class EditNoteComponent implements OnInit{
-  note:Note;
+  note: Note;
 
   constructor(
     private noteService: noteService,
@@ -31,7 +30,7 @@ export class EditNoteComponent implements OnInit{
 
   EditNote(){
     this.noteService.Edit(this.note).subscribe((note: Note) => {
-      this.toastService.success(`Note ${note.title} edited!`, 'Success');
+      this.toastService.success(`Note '${note.title}' edited!`, 'Success');
       this.router.navigate(['/notes', 'list']); 
     });
   }

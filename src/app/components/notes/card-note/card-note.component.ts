@@ -3,8 +3,7 @@ import { Note } from 'src/app/models/note';
 
 @Component({
   selector: 'app-card-note',
-  templateUrl: './card-note.component.html',
-  styleUrls: ['./card-note.component.css']
+  templateUrl: './card-note.component.html'
 })
 export class CardNoteComponent {
   @Input() note: Note = {
