@@ -30,7 +30,7 @@ export class EditCategoryComponent implements OnInit{
 
   EditCategory(){
     this.categoryService.Edit(this.category).subscribe((category: Category) => {
-      this.toastService.success(`Note ${category.title} edited!`, 'Success');
+      this.toastService.success(`Note '${category.title}' edited!`, 'Success');
       this.router.navigate(['/categories', 'list']); 
     });
   }

@@ -23,6 +23,15 @@
                 ></textarea>
             </div>
 
+            <div class="md-3">
+                <label class="form-label fs-5 fw-semibold" for="categoryId">Category</label>
+                <select [(ngModel)]="note.categoryId"name="categoryId" class="form-select w-50">
+                    <option *ngFor="let category of categories" [ngValue]="category.id">
+                        {{ category.title }}
+                    </option>
+                </select>
+            </div>
+
             <label for="theme" class="form-label fs-5 fw-semibold">Theme</label>
             <div>
                 <div class="form-check form-check-inline">

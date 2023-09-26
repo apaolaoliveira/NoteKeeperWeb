@@ -12,7 +12,7 @@ import { AddNoteComponent } from './components/notes/add-note/add-note.component
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
 import { DeleteNoteComponent } from './components/notes/delete-note/delete-note.component';
 import { CategoryFilterComponent } from './components/notes/category-filter/category-filter.component';
-import { ListFiledNotesComponent } from './components/notes/list-filed-notes/list-filed-notes.component';
+import { ListArchiveNotesComponent } from './components/notes/list-archive-notes/list-archive-notes.component';
 import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
 import { EditCategoryComponent } from './components/categories/edit-category/edit-category.component';
 import { DeleteCategoryComponent } from './components/categories/delete-category/delete-category.component';
@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     AddNoteComponent,
     EditNoteComponent,
     DeleteNoteComponent,
-    ListFiledNotesComponent,
+    ListArchiveNotesComponent,
 
     // categories
     ListCategoriesComponent,

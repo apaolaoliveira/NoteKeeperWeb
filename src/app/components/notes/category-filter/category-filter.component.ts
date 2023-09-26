@@ -1,26 +1,30 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-category-filter',
-  templateUrl: './category-filter.component.html'
+  templateUrl: './category-filter.component.html',
+  styles: [`
+    .app-badge-filter {
+      cursor: pointer;
+    }
+  `]
 })
 export class CategoryFilterComponent {
-  category: Category;
-  categories: Category[] = [];
+  @Input({ required: true }) categories: Category[] = [];
 
-  constructor(
-    private http: HttpClient
-  ){
-    this.category = new Category('');
+  @Output() onSelectedFilter: EventEmitter<Category | null>;
+
+  constructor(){
+    this.onSelectedFilter = new EventEmitter();
   }
 
-  GetAllCategories(){
-
+  GetAll(){
+    this.onSelectedFilter.emit(null);
   }
   
   SelectByFilter(category: Category){
-
+    this.onSelectedFilter.emit(category);
   }
 }

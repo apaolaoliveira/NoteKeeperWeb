@@ -19,14 +19,24 @@
             </div>
 
             <div class="mb-3">
-                <label for="conteudo" class="form-label">Content</label>
+                <label for="content" class="form-label">Content</label>
                 <textarea
                     [(ngModel)]="note.content"
-                    name="conteudo"
+                    name="content"
                     class="form-control"
-                    id="conteudo"
+                    id="content"
                     rows="3"
                 ></textarea>
+            </div>
+
+            <div class="md-3">
+                <label class="form-label fs-5 fw-semibold" for="categoryId">Category</label>
+                
+                <select [(ngModel)]="note.categoryId" name="categoryId" class="form-select w-50">
+                    <option *ngFor="let category of categories" [ngValue]="category.id">
+                        {{ category.title }}
+                    </option>
+                </select>
             </div>
 
             <label for="tema" class="form-label fs-5 fw-semibold">Theme</label>

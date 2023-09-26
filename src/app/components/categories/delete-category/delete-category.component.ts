@@ -17,7 +17,7 @@ export class DeleteCategoryComponent implements OnInit{
     private router: Router,
     private toastService: ToastrService
   ){
-    this.category = new Category ('', 0);
+    this.category = new Category ('');
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class DeleteCategoryComponent implements OnInit{
     });
   }
 
-  DeleteCategory(){
+  DeleteCategory(): void{
     this.categoryService.Delete(this.category).subscribe(() => {
       this.toastService.success(`Category deleted!`, 'Success');
       this.router.navigate(['/categories', 'list']); 

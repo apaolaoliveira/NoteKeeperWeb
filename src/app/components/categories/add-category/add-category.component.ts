@@ -21,8 +21,8 @@ export class AddCategoryComponent {
 
   AddCategory(){
       this.categoryService.Add(this.category).subscribe((category: Category) => {
-      this.toastService.success(`Category '${category.title}' added!`, 'Success');
-      this.router.navigate(['/categories', 'list']); 
+        this.toastService.success(`Category '${category.title}' added!`, 'Success');
+        this.router.navigate(['/categories', 'list']); 
     });
   }
 }

@@ -1,6 +1,6 @@
 <section class="row gap-3 justify-content-center">
     <div class="col-sm col-lg-10 d-grid gap-3">
-        <h1>Minhas Notas Arquivadas</h1>
+        <h1>My archive notes</h1>
 
         <div>
             <button routerLink="/notes/list" class="btn btn-lg btn-outline-primary mb-4 rounded-4" >
@@ -9,11 +9,13 @@
             </button>
         </div>
 
+        <app-category-filter [categories]="categories" (onSelectedFilter)="FilterNotesByCategory($event)"></app-category-filter>
+
         <div class="row g-3">
-            <!-- <div *ngFor="let note of notes" class="col-sm col-md-6 col-lg-3"> -->
-                <!-- <app-card-note [note]="note"></app-card-note> -->
+            <div *ngFor="let note of notes" class="col-sm col-md-6 col-lg-3">
+                <app-card-note [note]="note" (onSelectedFile)="UnarchiveNote($event)"></app-card-note>
             </div>
         </div>
-    <!-- </div> -->
+    </div>
 </section>
 

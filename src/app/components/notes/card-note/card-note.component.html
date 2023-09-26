@@ -27,5 +27,17 @@
         >
             <i class="bi bi-trash"></i>
         </button>
+
+        <button
+            class="btn btn-outline-{{ note.theme }} rounded-5 py-2"
+            [ngbTooltip]="note.archive ? 'Unarchive' : 'Archive'"
+            placement="bottom"
+            (click)="FileNote(note)"
+        >
+            <i
+                class="bi"
+                [ngClass]="note.archive ? 'bi-archive-fill' : 'bi-archive'"
+            ></i>
+        </button>
     </div>
 </div>

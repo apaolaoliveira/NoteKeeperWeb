@@ -5,6 +5,19 @@
             <i class="bi bi-bookmarks-fill"></i>
             NoteKeeper
         </a>
-        <a routerLink="/" class="nav-link">Home</a>
+        
+        <div class="d-flex gap-2">
+            <a routerLink="/categories/list" class="nav-link">
+                <button routerLinkActive="btn-primary text-light" class="btn btn-outline-primary px-4" >
+                    Categories
+                </button>
+            </a>
+
+            <a routerLink="/notes/list" class="nav-link">
+                <button routerLinkActive="btn-primary text-light" class="btn btn-outline-primary px-4" >
+                    Notes
+                </button>
+            </a>
+        </div>
     </div>
 </nav>

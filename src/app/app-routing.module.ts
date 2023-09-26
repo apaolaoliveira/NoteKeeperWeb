@@ -8,16 +8,21 @@ import { DeleteCategoryComponent } from './components/categories/delete-category
 import { EditCategoryComponent } from './components/categories/edit-category/edit-category.component';
 import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
 import { ListCategoriesComponent } from './components/categories/list-categories/list-categories.component';
+import { ListArchiveNotesComponent } from './components/notes/list-archive-notes/list-archive-notes.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'notes/list',
+    redirectTo: 'categories/list',
     pathMatch: 'full'
   },
   {
     path: 'notes/list',
     component: ListNotesComponent
+  },
+  {
+    path: 'notes/list/archive',
+    component: ListArchiveNotesComponent
   },
   {
     path: 'notes/add',
@@ -31,6 +36,7 @@ const routes: Routes = [
     path: 'notes/delete/:id',
     component: DeleteNoteComponent
   },
+  
   {
     path: 'categories/list',
     component: ListCategoriesComponent

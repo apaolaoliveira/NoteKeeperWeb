@@ -9,7 +9,7 @@ export class Note {
     categoryId: number;
     category?: Category;
 
-    filed: boolean;
+    archive: boolean;
 
     constructor(
         title: string,
@@ -23,7 +23,7 @@ export class Note {
         this.content = content;
         this.theme = theme;
         this.categoryId = categoryId;
-        this.filed = false;
+        this.archive = false;
     }
 }
 

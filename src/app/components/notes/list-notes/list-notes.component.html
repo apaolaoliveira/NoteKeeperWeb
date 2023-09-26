@@ -8,17 +8,17 @@
                 New Note
             </button>
 
-            <button routerLink="/notes/filed" class="btn btn-lg btn-outline-secondary mb-4 rounded-4">
+            <button routerLink="/notes/list/archive" class="btn btn-lg btn-outline-secondary mb-4 rounded-4">
                 <i class="bi bi-archive-fill"></i>
                 Filed Notes
             </button>
         </div>
 
-        <!-- <app-filtros-por-categoria [categorias]="categorias" (onFiltroSelecionado)="filtrarNotasPorCategoria($event)"></app-filtros-por-categoria> -->
+        <app-category-filter [categories]="categories" (onSelectedFilter)="FilterByCategory($event)"></app-category-filter>
 
         <div class="row g-3">
-            <div *ngFor="let note of notes" class="col-sm col-md-6 col-lg-3"> <!-- (onArquivarClicado)="arquivarNota($event)"  -->
-                <app-card-note [note]="note"></app-card-note>
+            <div *ngFor="let note of notes" class="col-sm col-md-6 col-lg-3">
+                <app-card-note [note]="note" (onSelectedFile)="FileNote($event)"></app-card-note>
             </div>
         </div>
     </div>

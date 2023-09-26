@@ -1,19 +1,19 @@
 <div class="row g-2">
     <div class="col-6 col-lg-1">
         <span
-            (click)="GetAllCategories()"
-            ngbTooltip="Todas as notas"
+            (click)="GetAll()"
+            ngbTooltip="All notes"
             placement="left"
-            class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold"
-        >Todas</span>
+            class="app-badge-filter badge rounded-pill bg-secondary w-100 p-2 fs-6 fw-semibold"
+        >All</span>
     </div>
 
     <div class="col-6 col-lg-1" *ngFor="let category of categories">
         <span
             (click)="SelectByFilter(category)"
-            ngbTooltip="Filtrar por category: {{ category.title }}"
+            ngbTooltip="Filter by category: {{ category.title }}"
             placement="bottom"
-            class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold"
+            class="app-badge-filter badge rounded-pill bg-secondary w-100 p-2 fs-6 fw-semibold"
             >{{ category.title.split(" ")[0] }}</span>
     </div>
 </div>

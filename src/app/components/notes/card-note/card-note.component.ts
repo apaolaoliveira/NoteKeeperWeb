@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Note } from 'src/app/models/note';
 
 @Component({
@@ -6,12 +6,16 @@ import { Note } from 'src/app/models/note';
   templateUrl: './card-note.component.html'
 })
 export class CardNoteComponent {
-  @Input() note: Note = {
-    id: 0,
-    title: 'Lavar o cachorro',
-    content: 'Pegar a toalha > Pegar o Shampoo',
-    theme: 'dark',
-    categoryId: 1,
-    filed: false
-  };
+  @Input() note: Note;
+
+  @Output() onSelectedFile: EventEmitter<Note>;
+
+  constructor(){
+    this.note = new Note('', '', 'dark', 0, 0);
+    this.onSelectedFile = new EventEmitter();
+  }
+
+  FileNote(note: Note){
+    this.onSelectedFile.emit(note);
+  }
 }
