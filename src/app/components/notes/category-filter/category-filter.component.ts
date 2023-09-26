@@ -16,15 +16,20 @@ export class CategoryFilterComponent {
 
   @Output() onSelectedFilter: EventEmitter<Category | null>;
 
+  selectedCategory: string | null = null;
+
   constructor(){
     this.onSelectedFilter = new EventEmitter();
+    this.selectedCategory = 'All';
   }
 
   GetAll(){
+    this.selectedCategory = 'All';
     this.onSelectedFilter.emit(null);
   }
   
   SelectByFilter(category: Category){
+    this.selectedCategory = category.title;
     this.onSelectedFilter.emit(category);
   }
 }

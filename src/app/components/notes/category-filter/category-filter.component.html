@@ -4,7 +4,8 @@
             (click)="GetAll()"
             ngbTooltip="All notes"
             placement="left"
-            class="app-badge-filter badge rounded-pill bg-secondary w-100 p-2 fs-6 fw-semibold"
+            class="app-badge-filter badge rounded-pill w-100 p-2 fs-6 fw-semibold"
+            [class]="selectedCategory === 'All' ? 'bg-body-secondary text-dark' : 'bg-dark'"
         >All</span>
     </div>
 
@@ -13,7 +14,8 @@
             (click)="SelectByFilter(category)"
             ngbTooltip="Filter by category: {{ category.title }}"
             placement="bottom"
-            class="app-badge-filter badge rounded-pill bg-secondary w-100 p-2 fs-6 fw-semibold"
+            class="app-badge-filter badge rounded-pill w-100 p-2 fs-6 fw-semibold"
+            [class]="selectedCategory === category.title ? 'bg-body-secondary text-dark' : 'bg-dark'"
             >{{ category.title.split(" ")[0] }}</span>
     </div>
 </div>
