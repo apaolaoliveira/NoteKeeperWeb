@@ -28,7 +28,7 @@ export class ListNotesComponent implements OnInit{
   }
 
   SelectAllNotes(): void {
-    this.noteService.GetAll().subscribe((notes: Note[]) => {
+    this.noteService.GetUnarchiveNotes().subscribe((notes: Note[]) => {
       this.notes = notes;
     });
   }
@@ -54,7 +54,7 @@ export class ListNotesComponent implements OnInit{
     this.noteService.Edit(note).subscribe((note: Note) =>{
       this.toastService.success(`Note '${note.title} was filed!'`, 'Success');
 
-      this.noteService.GetAll().subscribe((notes: Note[]) =>{
+      this.noteService.GetUnarchiveNotes().subscribe((notes: Note[]) =>{
         this.notes = notes;
       });
     })

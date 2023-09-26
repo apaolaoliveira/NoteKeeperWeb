@@ -38,12 +38,14 @@ export class NoteService{
         return this.http.get<Note>(url);
     }
 
-    GetAll(): Observable<Note[]>{
-        return this.http.get<Note[]>(this.NOTES_API_URL);
+    GetUnarchiveNotes(): Observable<Note[]>{
+        const url = `${this.NOTES_API_URL}?archive=false`;
+
+        return this.http.get<Note[]>(url);
     }
 
     SelectArchiveNotes(): Observable<Note[]>{
-        const url = `${this.CATEGORIES_API_URL}?archive=true`;
+        const url = `${this.NOTES_API_URL}?archive=true`;
 
         return this.http.get<Note[]>(url);
     }

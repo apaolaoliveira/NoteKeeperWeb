@@ -24,7 +24,6 @@
       "content": "Pegar a toalha > Pegar o Shampoo",
       "theme": "info",
       "categoryId": 3,
-      "filed": false,
       "archive": true
     },
     {
@@ -33,7 +32,7 @@
       "content": "Pegar a folha > Pegar o lápis",
       "theme": "danger",
       "categoryId": 4,
-      "filed": false
+      "archive": false
     },
     {
       "id": 2,
@@ -41,7 +40,6 @@
       "content": "Pegar as roupas > levar no quintal",
       "theme": "warning",
       "categoryId": 2,
-      "filed": false,
       "archive": true
     }
   ]
