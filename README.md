@@ -8,15 +8,20 @@ Inspired by the notes of [Google Keep](https://keep.google.com/u/0/#home).
 - Edit note
 - Delete note
 - List all notes
-- File notes
-- List all filed notes
+- Archive notes
+- List all archived notes
+- Unarchive notes
+- List all unarchived notes
 - Add new category
 - Edit category
 - Delete category
 - List all categories 
 - Filter note by category
-- Persistence of information in json-server
-- Management of request made in Insomnia, posted Api: [NoteKeeperApi]()
+- Show confirmation toasts from [ngx-toastr](https://github.com/scttcper/ngx-toastr)
+- Persistence of information in [json-server](https://github.com/typicode/json-server)
+- Management of request made in [Insomnia](https://insomnia.rest/download)
+- Posted [GitHub API](https://github.com/apaolaoliveira/NoteKeeperApi) in [Render](https://render.com/)
+- Project made with [Angular](https://angular.io/) framework
 
 ## Development server
 
