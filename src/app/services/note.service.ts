@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
-import { Note } from "../models/note";
-import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Note } from "../models/note";
+import { Injectable } from "@angular/core";
 import { Category } from "../models/category";
+import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 
 @Injectable({
@@ -10,8 +10,8 @@ import { environment } from "src/environments/environment";
 })
 export class NoteService{
 
-    private NOTES_API_URL = `${environment.API_URL}/api/notes`;
-    private CATEGORIES_API_URL = `${environment.API_URL}/api/categories`;
+    private NOTES_API_URL = `${environment.API_URL}/notes`;
+    private CATEGORIES_API_URL = `${environment.API_URL}/categories`;
 
     constructor(
         private http: HttpClient

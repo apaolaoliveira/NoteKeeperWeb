@@ -3,7 +3,12 @@
         <h1>My Notes</h1>
 
         <div class="d-flex gap-2">
-            <button routerLink="/notes/add" class="btn btn-lg btn-outline-dark mb-4 rounded-4">
+            <button 
+                [ngbTooltip]="categories.length === 0 ? 'You need to create a category first' : 'New Note'"
+                placement="bottom"
+                [routerLink]="categories.length > 0 ? '/notes/add' : null"
+                class="btn btn-lg btn-outline-dark mb-4 rounded-4"
+            >
                 <i class="bi bi-plus-circle"></i>
                 New Note
             </button>
@@ -16,7 +21,9 @@
 
         <app-category-filter [categories]="categories" (onSelectedFilter)="FilterByCategory($event)"></app-category-filter>
 
-        <div class="row g-3">
+        <p *ngIf="notes.length == 0">No notes yet.</p>
+
+        <div *ngIf="notes.length > 0" class="row g-3">
             <div *ngFor="let note of notes" class="col-sm col-md-6 col-lg-3">
                 <app-card-note [note]="note" (onSelectedFile)="FileNote($event)"></app-card-note>
             </div>

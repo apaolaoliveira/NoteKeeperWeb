@@ -9,7 +9,9 @@
             </button>
         </div>
 
-        <table class="table table-hover table-bordered">
+        <p *ngIf="categories.length == 0">No categories yet.</p>
+
+        <table *ngIf="categories.length > 0" class="table table-hover table-bordered">
             <thead>
                 <tr class="text-start">
                     <th class="col-4">Id</th>
