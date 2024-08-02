@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<app-loader *ngIf="isLoading$ | async"></app-loader>
 
 <main class="container-fluid px-md-4 py-4">
   <router-outlet></router-outlet>

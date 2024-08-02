@@ -1,0 +1,24 @@
+.loader {
+  top: 56px;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgb(121, 121, 121)25%,
+    rgb(82, 82, 82) 50%,
+    rgb(70, 70, 70) 75%
+  );
+  background-size: 200% 100%;
+
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
