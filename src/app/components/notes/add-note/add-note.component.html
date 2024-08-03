@@ -25,7 +25,7 @@
 
             <div class="md-3">
                 <label class="form-label fs-5 fw-semibold" for="categoryId">Category</label>
-                <select [(ngModel)]="note.categoryId"name="categoryId" class="form-select w-50">
+                <select [(ngModel)]="note.categoryId"name="categoryId" class="form-select">
                     <option *ngFor="let category of categories" [ngValue]="category.id">
                         {{ category.title }}
                     </option>

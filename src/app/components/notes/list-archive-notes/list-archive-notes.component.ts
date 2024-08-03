@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Category } from 'src/app/models/category';
 import { Note } from 'src/app/models/note';
-import { CategoryService } from 'src/app/services/category.service';
+import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/category';
 import { NoteService } from 'src/app/services/note.service';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-list-archive-notes',
@@ -43,7 +43,7 @@ export class ListArchiveNotesComponent implements OnInit {
     note.archive = false;
 
     this.noteService.Edit(note).subscribe((note: Note) => {
-      this.toastService.success(`Note ${note.title} was unarchive!`, 'Success');
+      this.toastService.success(`Note "${note.title}" was unarchive!`, 'Success');
 
       this.noteService.SelectArchiveNotes().subscribe((notes: Note[]) => (this.notes = notes));
     });

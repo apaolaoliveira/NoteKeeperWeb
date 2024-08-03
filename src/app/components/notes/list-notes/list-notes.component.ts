@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Category } from 'src/app/models/category';
 import { Note } from 'src/app/models/note';
-import { CategoryService } from 'src/app/services/category.service';
+import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/category';
 import { NoteService } from 'src/app/services/note.service';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-list-notes',
@@ -16,7 +17,8 @@ export class ListNotesComponent implements OnInit{
   constructor(
     private noteService:NoteService,
     private categoryService: CategoryService,
-    private toastService: ToastrService
+    private toastService: ToastrService,
+    private router: Router,
   ){ }
 
   ngOnInit(): void {
@@ -52,12 +54,21 @@ export class ListNotesComponent implements OnInit{
     note.archive = true;
 
     this.noteService.Edit(note).subscribe((note: Note) =>{
-      this.toastService.success(`Note '${note.title} was filed!'`, 'Success');
+      this.toastService.success(`Note "${note.title}" was filed!'`, 'Success');
 
       this.noteService.GetUnarchiveNotes().subscribe((notes: Note[]) =>{
         this.notes = notes;
       });
     })
+  }
+
+  AddNote(){
+    if(this.categories.length == 0){
+      this.toastService.warning('You must create a category first', 'Warning');
+      return;
+    }
+
+    this.router.navigate(['/notes', 'add']);
   }
 }
 

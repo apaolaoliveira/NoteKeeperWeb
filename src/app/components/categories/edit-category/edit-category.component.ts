@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -29,8 +29,13 @@ export class EditCategoryComponent implements OnInit{
   }
 
   EditCategory(){
+    if(this.category.title === '') {
+      this.toastService.warning('Title is required!', 'Warning');
+      return;
+    }
+
     this.categoryService.Edit(this.category).subscribe((category: Category) => {
-      this.toastService.success(`Note '${category.title}' edited!`, 'Success');
+      this.toastService.success(`Note "${category.title}" edited!`, 'Success');
       this.router.navigate(['/categories', 'list']); 
     });
   }

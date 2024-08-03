@@ -4,10 +4,9 @@
 
         <div class="d-flex gap-2">
             <button 
-                [ngbTooltip]="categories.length === 0 ? 'You need to create a category first' : 'New Note'"
                 placement="bottom"
-                [routerLink]="categories.length > 0 ? '/notes/add' : null"
                 class="btn btn-lg btn-outline-dark mb-4 rounded-4"
+                (click)="AddNote()"
             >
                 <i class="bi bi-plus-circle"></i>
                 New Note
